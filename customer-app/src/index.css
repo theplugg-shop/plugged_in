@@ -1,0 +1,66 @@
+@import "tailwindcss";
+@import "@fontsource-variable/montserrat";
+@import "@fontsource/poppins/500.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-sans: 'Montserrat Variable', 'Century Gothic', 'Trebuchet MS', -apple-system, 'Segoe UI', sans-serif;
+    --font-logo: 'Poppins', 'Century Gothic', sans-serif;
+
+    --color-bg: var(--app-bg);
+    --color-surface: var(--app-surface);
+    --color-surface-2: var(--app-surface-2);
+    --color-ink: var(--app-ink);
+    --color-muted: var(--app-muted);
+    --color-line: var(--app-line);
+
+    /* the plugg brand palette — lifted from the approved UI mockup */
+    --color-volt: #E7FF4D;
+    --color-volt-ink: #15160B;
+    --color-delivered: #2BAE7E;
+    --color-sale: #FF5A3C;
+
+    --radius-card: 16px;
+    --radius-pill: 999px;
+    --radius-btn: 13px;
+}
+
+:root {
+    --app-bg: #F7F4EC;
+    --app-surface: #FFFFFF;
+    --app-surface-2: #EFEADC;
+    --app-ink: #1D1B1F;
+    --app-muted: #6E697A;
+    --app-line: #E6E1D4;
+}
+
+.dark {
+    --app-bg: #131217;
+    --app-surface: #1C1A21;
+    --app-surface-2: #242129;
+    --app-ink: #F4F1E9;
+    --app-muted: #9C97A8;
+    --app-line: #322E3A;
+}
+
+@layer base {
+  * {
+    @apply border-line;
+  }
+  body {
+    @apply bg-bg text-ink;
+  }
+  html {
+    @apply font-sans;
+    scrollbar-gutter: stable;
+  }
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
